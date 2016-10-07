@@ -17,6 +17,6 @@ describe JsonapiSpec::Matchers::HaveJsonapiAttribute do
       }
     }
 
-    expect(content.to_json).to have_jsonapi_attribute(:title)
+    expect(content.to_json).to have_jsonapi_attribute('title')
   end
 end

@@ -17,6 +17,6 @@ describe JsonapiSpec::Matchers::HaveJsonapiRelationship do
       }
     }
 
-    expect(content.to_json).to have_jsonapi_relationship(:author)
+    expect(content.to_json).to have_jsonapi_relationship('author')
   end
 end

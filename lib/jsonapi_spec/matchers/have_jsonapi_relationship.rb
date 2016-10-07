@@ -9,8 +9,8 @@ module JsonapiSpec
 
       def matches?(json)
         document = parse_jsonapi(json)
-        document.data.relationships.defined?(@relationship)
-      rescue JSON::API::InvalidDocument
+        document['data']['relationships'].key?(@relationship)
+      rescue JSONAPI::Parser::InvalidDocument
         false
       end
 

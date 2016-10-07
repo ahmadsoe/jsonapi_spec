@@ -9,8 +9,8 @@ module JsonapiSpec
 
       def matches?(json)
         document = parse_jsonapi(json)
-        document.data.attributes.defined?(@attribute)
-      rescue JSON::API::InvalidDocument
+        document['data']['attributes'].key?(@attribute)
+      rescue JSONAPI::Parser::InvalidDocument
         false
       end
 

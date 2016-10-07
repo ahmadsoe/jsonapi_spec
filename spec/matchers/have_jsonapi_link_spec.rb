@@ -17,6 +17,6 @@ describe JsonapiSpec::Matchers::HaveJsonapiLink do
       }
     }
 
-    expect(content.to_json).to have_jsonapi_link(:self)
+    expect(content.to_json).to have_jsonapi_link('self')
   end
 end

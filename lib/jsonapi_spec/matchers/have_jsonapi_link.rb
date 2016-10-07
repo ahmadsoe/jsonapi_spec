@@ -9,7 +9,7 @@ module JsonapiSpec
 
       def matches?(json)
         document = parse_jsonapi(json)
-        document.links.defined?(@link)
+        document['links'].key?(@link)
       rescue JSON::API::InvalidDocument
         false
       end

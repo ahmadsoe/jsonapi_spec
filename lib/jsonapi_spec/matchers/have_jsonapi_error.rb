@@ -5,9 +5,8 @@ module JsonapiSpec
 
       def matches?(json)
         document = parse_jsonapi(json)
-        return false if document.errors.nil?
-        true
-      rescue JSON::API::InvalidDocument => ex
+        document.key?('errors')
+      rescue JSONAPI::Parser::InvalidDocument => ex
         @validate_error_message = ex.message
         false
       end
